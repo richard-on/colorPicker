@@ -1,0 +1,12 @@
+{
+  "name": "color_picker",
+  "version": "1.0.0",
+  "dependencies": {
+    "@jaames/iro": "^5.5.2",
+    "connect": "^3.7.0",
+    "serve-static": "^1.15.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}

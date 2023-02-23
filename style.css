@@ -1,0 +1,145 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    background: #171F30;
+    line-height: 150%;
+    font-family: Roboto, sytem-ui, sans-serif;
+    font-size: 18px;
+}
+
+/* Styling the wrap */
+/*.wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}*/
+
+.wrap {
+    min-height: 100vh;
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.half {
+    width: 50%;
+    padding: 32px 0;
+}
+
+
+.title {
+    font-size: 32px;
+    margin-bottom: 24px;
+    display: block;
+    padding: 8px 0;
+}
+
+.readout {
+    line-height: 180%;
+}
+
+#values {
+    font-family: monospace;
+    line-height: 150%;
+}
+
+.link {
+    margin-top: 16px;
+}
+
+a {
+    color: MediumSlateBlue;
+}
+
+/* Styling the readout section */
+.readout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #171130;
+    border-radius: 15px;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Styling the RGB, HSV, and XYZ inputs */
+.rgb, .hsv, .xyz {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 0.2rem;
+}
+
+input[type="number"] {
+    width: 4rem;
+    height: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 4px;
+    border: none;
+    background-color: #f5f5f5;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    box-shadow: 0 0 3px #555;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: menulist-button;
+    margin: 0;
+    height: 2rem;
+    width: 2rem;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button:hover,
+input[type="number"]::-webkit-outer-spin-button:hover {
+    background-color: #ddd;
+}
+
+.palette {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.color {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}

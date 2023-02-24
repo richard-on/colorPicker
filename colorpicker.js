@@ -10,6 +10,60 @@ const RGB_MAX = 255
 const HUE_MAX = 360
 const SV_MAX = 100
 
+const curColor = document.getElementById("curColor");
+curColor.addEventListener("click", () => {
+    const style = window.getComputedStyle(curColor);
+    const bgColor = style.backgroundColor;
+    const tempInput = document.createElement("input");
+    tempInput.value = bgColor;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    let messageBox = document.querySelector('.message-box');
+    messageBox.style.display = 'block';
+    setTimeout(function() {
+        messageBox.style.display = 'none';
+    }, 1500);
+})
+
+const palette = document.getElementsByClassName("color")
+palette[0].style.backgroundColor = "rgb(0,0,0)";
+palette[1].style.backgroundColor = "rgb(255,255,255)";
+palette[2].style.backgroundColor = "rgb(255,0,0)";
+palette[3].style.backgroundColor = "rgb(0,255,0)";
+palette[4].style.backgroundColor = "rgb(0,0,255)";
+palette[5].style.backgroundColor = "rgb(255,255,0)";
+palette[6].style.backgroundColor = "rgb(255,0,255)";
+palette[7].style.backgroundColor = "rgb(0,255,255)";
+palette[8].style.backgroundColor = "rgb(255,140,0)";
+palette[9].style.backgroundColor = "rgb(130,50,0)";
+
+function parseRGB(colorString) {
+    const regex = /rgb\((\d+),\s*(\d+),\s*(\d+)\)/;
+    const matches = colorString.match(regex);
+    if (!matches) {
+        throw new Error("Invalid RGB color string");
+    }
+    const red = parseInt(matches[1], 10);
+    const green = parseInt(matches[2], 10);
+    const blue = parseInt(matches[3], 10);
+    return {red, green, blue};
+}
+
+for (let i = 0; i < palette.length; i++) {
+    palette[i].addEventListener("click", () => {
+        let colorStr = palette[i].style.backgroundColor;
+        let color = parseRGB(colorStr);
+        curColor.style.backgroundColor = colorStr;
+        updateInputs(color);
+        colorPicker.color.red = color.red;
+        colorPicker.color.green = color.green;
+        colorPicker.color.blue = color.blue;
+    })
+}
+
+
 const rInput = document.getElementById("rInput");
 const gInput = document.getElementById("gInput");
 const bInput = document.getElementById("bInput");
@@ -110,6 +164,7 @@ function updateInputs(color) {
 }
 
 colorPicker.on(["color:init", "color:change"], function(color){
+    curColor.style.backgroundColor = `rgb(${color.red},${color.green},${color.blue})`;
     updateInputs(color);
 });
 

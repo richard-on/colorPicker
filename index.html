@@ -6,40 +6,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
-    <div class="half">
-        <div class="colorPicker"></div>
-    </div>
-    <div class="half readout">
-        <span class="title">Select Color:</span>
-        <div class="rgb">
-            <label for="rInput">R</label><input id="rInput" type="number">
-            <label for="gInput">G</label><input id="gInput" type="number">
-            <label for="bInput">B</label><input id="bInput" type="number">
-        </div>
-        <div class="hsv">
-            <label for="hInput">H</label><input id="hInput" type="number">
-            <label for="sInput">S</label><input id="sInput" type="number">
-            <label for="vInput">V</label><input id="vInput" type="number">
-        </div>
-        <div class="xyz">
-            <label for="xInput">X</label><input id="xInput" type="number">
-            <label for="yInput">Y</label><input id="yInput" type="number">
-            <label for="zInput">Z</label><input id="zInput" type="number">
-        </div>
-    </div>
+<div class="message-box">
+    <p>Message copied to clipboard!</p>
 </div>
-<div class="palette">
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
+<div class="container">
+    <div id="curColor"></div>
+    <div class="wrap">
+        <div class="colorPicker"></div>
+        <div class="readout">
+            <span class="title">Select Color:</span>
+            <div class="rgb">
+                <label for="rInput">R</label><input id="rInput" type="number">
+                <label for="gInput">G</label><input id="gInput" type="number">
+                <label for="bInput">B</label><input id="bInput" type="number">
+            </div>
+            <div class="hsv">
+                <label for="hInput">H</label><input id="hInput" type="number">
+                <label for="sInput">S</label><input id="sInput" type="number">
+                <label for="vInput">V</label><input id="vInput" type="number">
+            </div>
+            <div class="xyz">
+                <label for="xInput">X</label><input id="xInput" type="number">
+                <label for="yInput">Y</label><input id="yInput" type="number">
+                <label for="zInput">Z</label><input id="zInput" type="number">
+            </div>
+        </div>
+    </div>
+    <div class="palette">
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+    </div>
 </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"> </script>

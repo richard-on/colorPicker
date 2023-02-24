@@ -151,7 +151,7 @@ input[type="number"]:focus {
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    appearance: menulist-button;
+    appearance: textfield;
     margin: 0;
     height: 2rem;
     width: 2rem;
@@ -166,6 +166,15 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"]::-webkit-inner-spin-button:hover,
 input[type="number"]::-webkit-outer-spin-button:hover {
     background-color: #ddd;
+}
+
+.clear {
+    clear: both;
+}
+
+.note {
+    font-size: 14px;
+    line-height: normal;
 }
 
 .palette {

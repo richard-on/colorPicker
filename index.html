@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="message-box">
-    <p>Message copied to clipboard!</p>
+    <p>Color copied to clipboard!</p>
 </div>
 <div class="container">
     <div id="curColor"></div>
@@ -20,15 +20,20 @@
                 <label for="gInput">G</label><input id="gInput" type="number">
                 <label for="bInput">B</label><input id="bInput" type="number">
             </div>
+            <div class="clear"></div>
             <div class="hsv">
                 <label for="hInput">H</label><input id="hInput" type="number">
                 <label for="sInput">S</label><input id="sInput" type="number">
                 <label for="vInput">V</label><input id="vInput" type="number">
             </div>
+            <div class="clear"></div>
             <div class="xyz">
-                <label for="xInput">X</label><input id="xInput" type="number">
-                <label for="yInput">Y</label><input id="yInput" type="number">
-                <label for="zInput">Z</label><input id="zInput" type="number">
+                <label for="xInput">X</label><input id="xInput" type="number" step="1">
+                <label for="yInput">Y</label><input id="yInput" type="number" step="1">
+                <label for="zInput">Z</label><input id="zInput" type="number" step="1">
+            </div>
+            <div class="note">
+                <p>Use arrows to pick XYZ colors! XYZ conversion involves rounding.</p>
             </div>
         </div>
     </div>

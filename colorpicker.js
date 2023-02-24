@@ -9,6 +9,9 @@ let colorPicker = new iro.ColorPicker(".colorPicker", {
 const RGB_MAX = 255
 const HUE_MAX = 360
 const SV_MAX = 100
+const X_MAX = 96
+const Y_MAX = 100
+const Z_MAX = 109
 
 const curColor = document.getElementById("curColor");
 curColor.addEventListener("click", () => {

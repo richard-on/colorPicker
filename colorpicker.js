@@ -250,9 +250,7 @@ function hsv_to_rgb(h, s, v) {
 function rgb_to_xyz(r, g, b) {
     r /= 255, g /= 255, b /= 255;
 
-    // sRGB is a gamma corrected format (a method of adjusting color
-    // to match non-linear human perception of light) gamma correction
-    // must be undone. The inverse function is linear below a corrected
+    // The inverse function is linear below a corrected
     // value of 0.04045 since gamma correction is linear at 0.0031308
     const invCompand = (c) => (c <= 0.04045) ?
         c / 12.92 :
@@ -283,6 +281,7 @@ function xyz_to_rgb(x, y, z) {
         0.041517523842953964 * z;
     const invB = 0.055710120445510616 * x + -0.2040210505984867 * y +
         1.0569959422543882 * z;
+
     // Linear rgb must be gamma corrected to normalized srgb. Gamma correction
     // is linear for values <= 0.0031308 to avoid infinite log slope near zero
     const compand = (c) => c <= 0.0031308 ?
@@ -291,8 +290,8 @@ function xyz_to_rgb(x, y, z) {
     const cR = compand(invR);
     const cG = compand(invG);
     const cB = compand(invB);
+
     // srgb is scaled to [0,255]
-    // Add zero to prevent signed zeros (force 0 rather than -0)
     return {
         r: Math.round(255 * cR + 0),
         g: Math.round(255 * cG + 0),
